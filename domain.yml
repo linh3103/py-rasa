@@ -11,9 +11,16 @@ intents:
   - hello_world
   - product_category
   - choose_category
+  - buy_blanket
+  - ask_hotline_number
+  - ask_working_hours
+  - ask_lunch_break
+  - ask_weekend_holiday
 
 entities:
   - cat_code
+  - row_count
+  - category_nm
 
 slots:
   cat_code:
@@ -21,7 +28,17 @@ slots:
     mappings:
       - type: from_entity
         entity: cat_code
-
+  row_count:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: row_count
+  category_nm:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: category_nm
+    
 responses:
   utter_greet:
   - text: "Hey! How are you?"
@@ -51,10 +68,23 @@ responses:
   utter_no_data:
   - text: "No data"
 
+  utter_hotline_number:
+    - text: "Bạn có thể gọi đến tổng đài 1588-2933 để được hỗ trợ."
+
+  utter_working_hours:
+    - text: "Tổng đài hoạt động từ 10:00 đến 17:00, từ thứ Hai đến thứ Sáu."
+
+  utter_lunch_break:
+    - text: "Trung tâm nghỉ trưa từ 12:00 đến 13:00."
+
+  utter_weekend_holiday:
+    - text: "Tổng đài không làm việc vào cuối tuần và các ngày lễ."
+
 actions:
   - action_hello_world
   - action_fetch_categories
   - action_fetch_products_by_cat_code
+  - action_buy_blanket
 
 session_config:
   session_expiration_time: 60

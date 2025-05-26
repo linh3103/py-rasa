@@ -16,11 +16,13 @@ from requests import Response
 class ActionHelloWorld(Action):
 
     def name(self) -> Text:
+        print("ActionHelloWorld called")
         return "action_hello_world"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(json_message={"message": "utter_hello_world"})
+        print("ActionHelloWorld run method called")
+        dispatcher.utter_message(json_message={"message": "123"})
 
         return []

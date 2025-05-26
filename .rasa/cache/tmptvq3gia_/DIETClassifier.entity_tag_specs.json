@@ -1,0 +1,28 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-cat_code",
+      "2": "I-cat_code",
+      "3": "L-cat_code",
+      "4": "U-cat_code",
+      "5": "B-row_count",
+      "6": "I-row_count",
+      "7": "L-row_count",
+      "8": "U-row_count",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-cat_code": 1,
+      "I-cat_code": 2,
+      "L-cat_code": 3,
+      "U-cat_code": 4,
+      "B-row_count": 5,
+      "I-row_count": 6,
+      "L-row_count": 7,
+      "U-row_count": 8,
+      "O": 0
+    },
+    "num_tags": 9
+  }
+]

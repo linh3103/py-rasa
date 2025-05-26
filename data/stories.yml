@@ -28,3 +28,9 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+
+- story: User want to buy blanket
+  steps:
+  - intent: buy_blanket
+  - action: utter_please_wait
+  - action: action_buy_blanket

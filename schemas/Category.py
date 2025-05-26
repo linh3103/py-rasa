@@ -28,3 +28,4 @@ class CategoryList(BaseModel):
     success: bool
     categories: list[Category1]
 
+

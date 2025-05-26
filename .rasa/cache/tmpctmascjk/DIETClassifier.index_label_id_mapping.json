@@ -1,0 +1,17 @@
+{
+  "0": "affirm",
+  "1": "ask_hotline_number",
+  "2": "ask_lunch_break",
+  "3": "ask_weekend_holiday",
+  "4": "ask_working_hours",
+  "5": "bot_challenge",
+  "6": "buy_blanket",
+  "7": "choose_category",
+  "8": "deny",
+  "9": "goodbye",
+  "10": "greet",
+  "11": "hello_world",
+  "12": "mood_great",
+  "13": "mood_unhappy",
+  "14": "product_category"
+}

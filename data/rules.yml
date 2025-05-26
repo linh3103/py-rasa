@@ -27,3 +27,23 @@ rules:
   steps:
   - intent: choose_category
   - action: action_fetch_products_by_cat_code
+
+- rule: Trả lời số điện thoại
+  steps:
+  - intent: ask_hotline_number
+  - action: utter_hotline_number
+
+- rule: Trả lời giờ làm việc
+  steps:
+  - intent: ask_working_hours
+  - action: utter_working_hours
+
+- rule: Trả lời có làm việc vào cuối tuần và các dịp lễ không
+  steps:
+  - intent: ask_weekend_holiday
+  - action: utter_weekend_holiday
+
+- rule: Trả lời giờ nghỉ trưa
+  steps:
+  - intent: ask_lunch_break
+  - action: utter_lunch_break

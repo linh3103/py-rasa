@@ -1,0 +1,44 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-cat_code",
+      "2": "I-cat_code",
+      "3": "L-cat_code",
+      "4": "U-cat_code",
+      "5": "B-category_nm",
+      "6": "I-category_nm",
+      "7": "L-category_nm",
+      "8": "U-category_nm",
+      "9": "B-count",
+      "10": "I-count",
+      "11": "L-count",
+      "12": "U-count",
+      "13": "B-row_count",
+      "14": "I-row_count",
+      "15": "L-row_count",
+      "16": "U-row_count",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-cat_code": 1,
+      "I-cat_code": 2,
+      "L-cat_code": 3,
+      "U-cat_code": 4,
+      "B-category_nm": 5,
+      "I-category_nm": 6,
+      "L-category_nm": 7,
+      "U-category_nm": 8,
+      "B-count": 9,
+      "I-count": 10,
+      "L-count": 11,
+      "U-count": 12,
+      "B-row_count": 13,
+      "I-row_count": 14,
+      "L-row_count": 15,
+      "U-row_count": 16,
+      "O": 0
+    },
+    "num_tags": 17
+  }
+]

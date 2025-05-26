@@ -104,4 +104,53 @@ nlu:
   examples: |
     - Xem danh mục: [1](cat_code)
     - Tôi muốn xem các sản phẩm thuộc danh mục [3](cat_code)
+    - Danh mục sản phẩm
+    - tôi muốn xem [6](row_count) sản phẩm trong danh mục
+    - trong danh mục [100](cat_code), cho tôi xem [3](row_count) sản phẩm
+    - top [4](row_count) sản phẩm của danh mục [55](cat_code)
+
+- synonym: blanket
+  examples: |
+    - chăn
+    - mền
+    - blanket
+    - blankets
+
+- intent: buy_blanket
+  examples: |
+    - tôi muốn mua [blanket](category_nm)
+    - [blanket](category_nm)
+    - show me [5](count) [blanket](category_nm)
+
+- intent: ask_hotline_number
+  examples: |
+    - Số điện thoại tổng đài là gì?
+    - Gọi hỗ trợ thì gọi số nào?
+    - Tôi cần liên hệ trung tâm khách hàng, số là bao nhiêu?
+    - Hotline chăm sóc khách hàng là số mấy?
+    - Làm sao để gọi tổng đài?
+    - điện thoại chăm sóc khách hàng?
     
+
+- intent: ask_working_hours
+  examples: |
+    - Trung tâm làm việc vào giờ nào?
+    - Giờ làm việc của tổng đài là gì?
+    - Tôi có thể gọi lúc mấy giờ?
+    - Trung tâm hoạt động từ mấy giờ đến mấy giờ?
+    - Khi nào tôi có thể liên hệ được?
+
+- intent: ask_lunch_break
+  examples: |
+    - Trung tâm có nghỉ trưa không?
+    - Có thể gọi vào buổi trưa không?
+    - Giờ nghỉ trưa là lúc nào?
+    - Tổng đài nghỉ lúc mấy giờ?
+
+- intent: ask_weekend_holiday
+  examples: |
+    - Trung tâm có làm việc cuối tuần không?
+    - Có mở cửa vào Chủ nhật không?
+    - Có làm việc vào ngày lễ không?
+    - Tôi gọi vào cuối tuần được không?
+    - Ngày nghỉ của trung tâm là khi nào?

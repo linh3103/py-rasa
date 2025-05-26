@@ -13,17 +13,24 @@ class productActions(Action):
               domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         cat_code = tracker.get_slot("cat_code")
+        row_count = tracker.get_slot("row_count")
 
-        print(cat_code)
+        if not row_count:
+            row_count = 5
+
+        payload = {
+            "cat_code": cat_code,
+            "row_count": row_count
+        }
+
+        print(payload)
 
         try:
-            result = await fetchProductsByCatCode(cat_code)
+            products = await fetchProductsByCatCode(payload)
 
-            if not result:
+            if not products:
                 dispatcher.utter_message(json_message={"message": "No data"})
                 return []
-
-            products = [product.dict() for product in result.list]
             dispatcher.utter_message(json_message=products)
         except Exception as e:
             print("Error:", e)

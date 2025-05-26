@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from ultities import Dictable
 
 class Product(BaseModel):
     product_cd: str
@@ -10,6 +11,8 @@ class Product(BaseModel):
     review_cnt: int
     file_nm: str
 
-class ProductList(BaseModel):
+class ProductList(BaseModel, Dictable):
     success: bool
     list: list[Product]
+
+    

@@ -9,36 +9,9 @@ intents:
   - mood_unhappy
   - bot_challenge
   - hello_world
-  - product_category
-  - choose_category
-  - buy_blanket
-  - ask_hotline_number
-  - ask_working_hours
-  - ask_lunch_break
-  - ask_weekend_holiday
+  - active_order_form
+  - enter_order_info
 
-entities:
-  - cat_code
-  - row_count
-  - category_nm
-
-slots:
-  cat_code:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: cat_code
-  row_count:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: row_count
-  category_nm:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: category_nm
-    
 responses:
   utter_greet:
   - text: "Hey! How are you?"
@@ -59,32 +32,210 @@ responses:
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
 
-  utter_hello:
-  - text: "rasa hello!!!!!!!!!!"
+  utter_ask_product:
+  - text: "Bạn muốn mua sản phẩm nào? Vui lòng cung cấp tên sản phẩm bên dưới:"
 
-  utter_please_wait:
-  - text: "Please wait...."
+  utter_ask_size:
+  - text: "Bạn mặc vừa size nào? Ví dụ: S, M, L, XL, XXL"
 
-  utter_no_data:
-  - text: "No data"
+  utter_ask_color:
+  - text: "Bạn muốn màu gì?"
 
-  utter_hotline_number:
-    - text: "Bạn có thể gọi đến tổng đài 1588-2933 để được hỗ trợ."
+  utter_ask_count:
+  - text: "Bạn muốn mua bao nhiêu sản phẩm?"
 
-  utter_working_hours:
-    - text: "Tổng đài hoạt động từ 10:00 đến 17:00, từ thứ Hai đến thứ Sáu."
+  utter_ask_user_name:
+  - text: "Cho tôi biết tên người nhận hàng?"
 
-  utter_lunch_break:
-    - text: "Trung tâm nghỉ trưa từ 12:00 đến 13:00."
+  utter_ask_address:
+  - text: "Được rồi {user_name}, cho tôi biết địa chỉ đặt hàng của bạn"
 
-  utter_weekend_holiday:
-    - text: "Tổng đài không làm việc vào cuối tuần và các ngày lễ."
+  utter_ask_phone_number:
+  - text: "Cuối cùng, cho tôi biết số điện thoại của bạn để chúng tôi liên hệ khi giao hàng."
+
+forms:
+  order_product:
+    required_slots:
+      - product_name
+      - size
+      - color
+      - count
+      - user_name
+      - address
+      - phone_number
+
+  register:
+    required_slots:
+      - user_name
+      - gender
+      - birth_day
+      - password
+
+entities:
+  - discount
+  - color
+  - brand
+  - size
+  - price
+  - product_name
+  - product_cd
+  - count
+  - address
+  - phone_number
+  - user_name
+
+slots:
+  product_name:
+    type: text
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: order_product
+            requested_slot: product_name
+
+      - type: from_entity
+        entity: product_name
+        conditions:
+          - active_loop: order_product
+
+  size:
+    type: text
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: order_product
+            requested_slot: size
+
+      - type: from_entity
+        entity: size
+        conditions:
+          - active_loop: order_product
+
+  color:
+    type: text
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: order_product
+            requested_slot: color
+
+      - type: from_entity
+        entity: color
+        conditions:
+          - active_loop: order_product
+
+  count:
+    type: text
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: order_product
+            requested_slot: count
+
+      - type: from_entity
+        entity: count
+        conditions:
+          - active_loop: order_product
+
+  user_name:
+    type: text
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: order_product
+            requested_slot: user_name
+          - active_loop: register
+            requested_slot: user_name
+
+      - type: from_entity
+        entity: user_name
+        conditions:
+          - active_loop: order_product
+            requested_slot: user_name
+          - active_loop: register
+            requested_slot: user_name
+
+  address:
+    type: text
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: order_product
+            requested_slot: address
+
+      - type: from_entity
+        entity: address
+        conditions:
+          - active_loop: order_product
+            requested_slot: address
+
+  phone_number:
+    type: text
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: order_product
+            requested_slot: phone_number
+
+      - type: from_entity
+        entity: phone_number
+        conditions:
+          - active_loop: order_product
+            requested_slot: phone_number
+
+  gender:
+    type: text
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: register
+            requested_slot: gender
+
+  birth_day:
+    type: text
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: register
+            requested_slot: birth_day
+
+  password:
+    type: text
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: register
+            requested_slot: password
+
+  discount:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: discount
+        
+  brand:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: brand
+        
+  price:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: price
+        
+  product_cd:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: product_cd
+        
+
 
 actions:
   - action_hello_world
-  - action_fetch_categories
-  - action_fetch_products_by_cat_code
-  - action_buy_blanket
+  - action_confirm_order
 
 session_config:
   session_expiration_time: 60

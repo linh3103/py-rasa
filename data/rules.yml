@@ -12,38 +12,18 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
 
-- rule: Say hello world
+- rule: active order form
   steps:
-  - intent: hello_world
-  - action: utter_hello
-  - action: action_hello_world
+  - intent: active_order_product
+  - action: order_product
+  - active_loop: order_product
 
-- rule: fetching product categories
+- rule: submit order form
+  condition:
+  - active_loop: order_product
   steps:
-  - intent: product_category
-  - action: action_fetch_categories
-
-- rule: User tap a category button
-  steps:
-  - intent: choose_category
-  - action: action_fetch_products_by_cat_code
-
-- rule: Trả lời số điện thoại
-  steps:
-  - intent: ask_hotline_number
-  - action: utter_hotline_number
-
-- rule: Trả lời giờ làm việc
-  steps:
-  - intent: ask_working_hours
-  - action: utter_working_hours
-
-- rule: Trả lời có làm việc vào cuối tuần và các dịp lễ không
-  steps:
-  - intent: ask_weekend_holiday
-  - action: utter_weekend_holiday
-
-- rule: Trả lời giờ nghỉ trưa
-  steps:
-  - intent: ask_lunch_break
-  - action: utter_lunch_break
+  - action: order_product
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_confirm_order

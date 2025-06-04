@@ -90,67 +90,29 @@ nlu:
     - am I talking to a bot?
     - am I talking to a human?
 
-- intent: hello_world
+- intent: active_order_form
   examples: |
-    - hello world!!!
-    - world hello
+    - Tôi muốn mua hàng
+    - Tôi cần đặt hàng
+    - Hỗ trợ tôi order
+    - Tôi cần hỗ trợ đặt hàng online
+    - Đặt hàng online
 
-- intent: product_category
+- intent: enter_order_info
   examples: |
-    - what kind of product do you sell
-    - cho tôi xem 1 số loại sản phẩm
-
-- intent: choose_category
-  examples: |
-    - Xem danh mục: [1](cat_code)
-    - Tôi muốn xem các sản phẩm thuộc danh mục [3](cat_code)
-    - Danh mục sản phẩm
-    - tôi muốn xem [6](row_count) sản phẩm trong danh mục
-    - trong danh mục [100](cat_code), cho tôi xem [3](row_count) sản phẩm
-    - top [4](row_count) sản phẩm của danh mục [55](cat_code)
-
-- synonym: blanket
-  examples: |
-    - chăn
-    - mền
-    - blanket
-    - blankets
-
-- intent: buy_blanket
-  examples: |
-    - tôi muốn mua [blanket](category_nm)
-    - [blanket](category_nm)
-    - show me [5](count) [blanket](category_nm)
-
-- intent: ask_hotline_number
-  examples: |
-    - Số điện thoại tổng đài là gì?
-    - Gọi hỗ trợ thì gọi số nào?
-    - Tôi cần liên hệ trung tâm khách hàng, số là bao nhiêu?
-    - Hotline chăm sóc khách hàng là số mấy?
-    - Làm sao để gọi tổng đài?
-    - điện thoại chăm sóc khách hàng?
-    
-
-- intent: ask_working_hours
-  examples: |
-    - Trung tâm làm việc vào giờ nào?
-    - Giờ làm việc của tổng đài là gì?
-    - Tôi có thể gọi lúc mấy giờ?
-    - Trung tâm hoạt động từ mấy giờ đến mấy giờ?
-    - Khi nào tôi có thể liên hệ được?
-
-- intent: ask_lunch_break
-  examples: |
-    - Trung tâm có nghỉ trưa không?
-    - Có thể gọi vào buổi trưa không?
-    - Giờ nghỉ trưa là lúc nào?
-    - Tổng đài nghỉ lúc mấy giờ?
-
-- intent: ask_weekend_holiday
-  examples: |
-    - Trung tâm có làm việc cuối tuần không?
-    - Có mở cửa vào Chủ nhật không?
-    - Có làm việc vào ngày lễ không?
-    - Tôi gọi vào cuối tuần được không?
-    - Ngày nghỉ của trung tâm là khi nào?
+    - Tôi muốn mua [chăn](product_name)
+    - Tôi thích cái [gối](product_name) này, hỗ trợ tôi đặt hàng
+    - Cái [rèm cửa](product_name) được đó, tôi muốn mua
+    - Tôi muốn mua cái [áo thun](product_name) màu [đen](color) size [L](size).
+    - Cho mình đặt [quần jean](product_name) size [32](size) màu [xanh đen](color).
+    - Mình đặt [áo sơ mi](product_name) [2](count) cái màu [trắng](color) nha.
+    - Có [áo khoác](product_name) size [XL](size) màu [xám](color) không bạn?
+    - Cho mình [1](count) cái [váy](product_name) màu [đỏ](color), size [S](size).
+    - Mình cần [3](count) cái [áo polo](product_name) size [M](size), đủ màu.
+    - Tôi muốn mua cái [đầm](product_name) size [L](size), màu [be](color).
+    - Mình lấy cái [quần short](product_name) màu [kem](color), size [30](size).
+    - Cho mình đặt [áo hoodie](product_name) size [XL](size), màu [xanh lá](color).
+    - Mình cần [2](count) cái [áo sơ mi](product_name), size [M](size), màu [xanh navy](color).
+    - [Quần jean nam](product_name), size [31](size)
+    - [Áo thun nữ](product_name), màu [đỏ](color)
+    - Có [drap nệm hello kitty](product_name) không cu?

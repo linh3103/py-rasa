@@ -29,8 +29,8 @@ stories:
   - intent: deny
   - action: utter_goodbye
 
-- story: User want to buy blanket
+- story: user nhập trước thông tin sản phẩm
   steps:
-  - intent: buy_blanket
-  - action: utter_please_wait
-  - action: action_buy_blanket
+  - intent: enter_order_info
+  - action: order_product
+  - active_loop: order_product

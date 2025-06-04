@@ -14,7 +14,7 @@ rules:
 
 - rule: active order form
   steps:
-  - intent: active_order_product
+  - intent: active_order_form
   - action: order_product
   - active_loop: order_product
 
@@ -27,3 +27,4 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - action: action_confirm_order
+  - action: action_reset_slots

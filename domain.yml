@@ -32,7 +32,7 @@ responses:
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
 
-  utter_ask_product:
+  utter_ask_product_name:
   - text: "Bạn muốn mua sản phẩm nào? Vui lòng cung cấp tên sản phẩm bên dưới:"
 
   utter_ask_size:
@@ -97,6 +97,7 @@ slots:
         entity: product_name
         conditions:
           - active_loop: order_product
+          - requested_slot: product_name
 
   size:
     type: text
@@ -110,6 +111,7 @@ slots:
         entity: size
         conditions:
           - active_loop: order_product
+          - requested_slot: size
 
   color:
     type: text
@@ -136,6 +138,7 @@ slots:
         entity: count
         conditions:
           - active_loop: order_product
+          - requested_slot: count
 
   user_name:
     type: text
@@ -236,6 +239,7 @@ slots:
 actions:
   - action_hello_world
   - action_confirm_order
+  - action_reset_slots
 
 session_config:
   session_expiration_time: 60

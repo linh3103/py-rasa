@@ -29,6 +29,14 @@ stories:
   - intent: deny
   - action: utter_goodbye
 
+- story: active order form from story
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: active_order_form
+  - action: order_product
+  - active_loop: order_product
+
 - story: user nhập trước thông tin sản phẩm
   steps:
   - intent: enter_order_info

@@ -1,0 +1,93 @@
+{
+  "type": "IntentMaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "active_order_form": 0,
+        "affirm": 1,
+        "back": 2,
+        "bot_challenge": 3,
+        "deny": 4,
+        "enter_order_info": 5,
+        "goodbye": 6,
+        "greet": 7,
+        "hello_world": 8,
+        "mood_great": 9,
+        "mood_unhappy": 10,
+        "nlu_fallback": 11,
+        "out_of_scope": 12,
+        "restart": 13,
+        "session_start": 14
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "action_hello_world": 13,
+        "action_confirm_order": 14,
+        "utter_ask_address": 15,
+        "utter_ask_color": 16,
+        "utter_ask_count": 17,
+        "utter_ask_phone_number": 18,
+        "utter_ask_product": 19,
+        "utter_ask_size": 20,
+        "utter_ask_user_name": 21,
+        "utter_cheer_up": 22,
+        "utter_did_that_help": 23,
+        "utter_goodbye": 24,
+        "utter_greet": 25,
+        "utter_happy": 26,
+        "utter_iamabot": 27,
+        "order_product": 28,
+        "register": 29
+      },
+      "entities": {
+        "address": 0,
+        "brand": 1,
+        "color": 2,
+        "count": 3,
+        "discount": 4,
+        "phone_number": 5,
+        "price": 6,
+        "product_cd": 7,
+        "product_name": 8,
+        "size": 9,
+        "user_name": 10
+      },
+      "slots": {
+        "product_name_0": 0,
+        "size_0": 1,
+        "color_0": 2,
+        "count_0": 3,
+        "user_name_0": 4,
+        "address_0": 5,
+        "phone_number_0": 6,
+        "gender_0": 7,
+        "birth_day_0": 8,
+        "password_0": 9,
+        "discount_0": 10,
+        "brand_0": 11,
+        "price_0": 12,
+        "product_cd_0": 13
+      },
+      "active_loop": {
+        "order_product": 0,
+        "register": 1
+      }
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 5
+}

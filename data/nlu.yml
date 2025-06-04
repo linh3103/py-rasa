@@ -116,3 +116,13 @@ nlu:
     - [Quần jean nam](product_name), size [31](size)
     - [Áo thun nữ](product_name), màu [đỏ](color)
     - Có [drap nệm hello kitty](product_name) không cu?
+    - Tôi muốn đặt [áo sơ mi](product_name) màu [xanh](color)
+    - Cho mình [2](count) cái [quần tây](product_name)
+    - Mình cần mua [váy](product_name) size [M](size)
+    - Đặt [áo khoác](product_name) màu [đen](color), size [L](size)
+    - Cho mình đặt [1](count) cái [áo thun](product_name) màu [trắng](color)
+    - Tôi muốn mua [giày thể thao](product_name) size [42](size)
+    - Mình lấy [3](count) cái [quần short](product_name) màu [xám](color)
+    - Đặt [áo hoodie](product_name) màu [xanh lá](color), size [XL](size)
+    - Cho mình [1](count) cái [đầm](product_name)
+    - Tôi muốn mua [áo polo](product_name) size [L](size), màu [xanh navy](color)
